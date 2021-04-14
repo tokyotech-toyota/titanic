@@ -5,12 +5,12 @@ from sklearn.tree import DecisionTreeClassifier, export_graphviz
 import graphviz
 import pydotplus
 from IPython.display import Image
-from sklearn.externals.six import StringIO
-
+#from sklearn.externals.six import StringIO
+from six import StringIO
 
 # read csv data
-train_path = "../train.csv"
-test_path = "../test.csv"
+train_path = "./dat/train.csv"
+test_path = "./dat/test.csv"
 
 train = pd.read_csv(train_path)
 test = pd.read_csv(test_path)
@@ -39,7 +39,6 @@ test["Fare"] = test["Fare"].fillna(test["Fare"].median())
 print(kesson_table(train))
 print(kesson_table(test))
 
-
 # change word to number
 train["Sex"][train["Sex"] == "male"] = 0
 train["Sex"][train["Sex"] == "female"] = 1
@@ -56,7 +55,6 @@ test["Embarked"][test["Embarked"] == "Q"] = 2
 # check
 print(train.head(10))
 print(test.head(10))
-
 
 # get target and feature data
 target = train["Survived"].values
