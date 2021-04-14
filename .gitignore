@@ -1,0 +1,19 @@
+########## binary files ##########
+*.pyc
+*.pkl
+*.pickle
+*.pdf
+*.eps
+*.png
+*.jpg
+*.mp4
+*.avi
+*.mp3
+*.o
+*.so
+*.a
+*.out
+*.bin
+
+########## config file ##########
+Pipfile.lock
