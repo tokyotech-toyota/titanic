@@ -16,4 +16,4 @@
 *.bin
 
 ########## config file ##########
-Pipfile.lock
+#Pipfile.lock
