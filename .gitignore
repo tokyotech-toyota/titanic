@@ -15,5 +15,12 @@
 *.out
 *.bin
 
+########## secondary generated files ##########
+
+*.meta
+*.index
+*ckpt*
+checkpoint
+
 ########## config file ##########
 #Pipfile.lock
