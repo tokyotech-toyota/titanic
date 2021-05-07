@@ -215,5 +215,5 @@ evaluation=passenger_id.to_frame()
 evaluation["Survived"]=test_predict_result
 evaluation[:10]
 
-evaluation.to_csv("evaluation_submission.csv",index=False)
+evaluation.to_csv("./out/evaluation_submission.csv",index=False)
 
