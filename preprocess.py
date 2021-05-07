@@ -183,7 +183,7 @@ with tf.Session() as sess:
                       "Validation Acc: {:.4f}".format(val_acc))
                 
 
-    saver.save(sess, "./titanic.ckpt")
+    saver.save(sess, "./out/titanic.ckpt")
 
 plt.plot(x_collect, train_loss_collect, "r--")
 plt.plot(x_collect, valid_loss_collect, "g^")
@@ -196,7 +196,7 @@ plt.show()
 model=build_neural_network()
 restorer=tf.train.Saver()
 with tf.Session() as sess:
-    restorer.restore(sess,"./titanic.ckpt")
+    restorer.restore(sess,"./out/titanic.ckpt")
     feed={
         model.inputs:test_data,
         model.is_training:False
