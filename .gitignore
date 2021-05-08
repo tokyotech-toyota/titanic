@@ -17,10 +17,11 @@
 
 ########## secondary generated files ##########
 
-*.meta
-*.index
-*ckpt*
-checkpoint
+out/*
+#*.meta
+#*.index
+#*ckpt*
+#checkpoint
 
 ########## config file ##########
 #Pipfile.lock
