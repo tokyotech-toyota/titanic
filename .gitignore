@@ -1,4 +1,4 @@
-########## binary files ##########
+########## ignore files ##########
 *.pyc
 *.pkl
 *.pickle
@@ -15,9 +15,11 @@
 *.out
 *.bin
 
-########## secondary generated files ##########
-
+# ignore output files
 share/out/*
+
+# ignore entrypoint.sh
+share/entrypoint.sh
 
 ########## do not ignore ##########
 !.gitkeep
