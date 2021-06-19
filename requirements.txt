@@ -1,0 +1,15 @@
+########## latest version ##########
+
+pandas
+numpy
+sklearn
+image
+graphviz
+pydotplus
+ipython
+keras
+matplotlib
+
+########## specific version ##########
+
+tensorflow==1.15

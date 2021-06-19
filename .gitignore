@@ -17,7 +17,7 @@
 
 ########## secondary generated files ##########
 
-out/*
+share/out/*
 #*.meta
 #*.index
 #*ckpt*
