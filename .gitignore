@@ -18,10 +18,6 @@
 ########## secondary generated files ##########
 
 share/out/*
-#*.meta
-#*.index
-#*ckpt*
-#checkpoint
 
-########## config file ##########
-#Pipfile.lock
+########## do not ignore ##########
+!.gitkeep
