@@ -1,5 +1,5 @@
 # https://www.kaggle.com/linxinzhe/tensorflow-deep-learning-to-solve-titanic/notebook
-import tensorflow as tf
+# import tensorflow as tf
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -86,6 +86,9 @@ print("train_y content:{}".format(train_y[:3]))
 print("valid_x:{}".format(valid_x.shape))
 print("valid_y:{}".format(valid_y.shape))
 
+print(train_x)  
+
+'''
 # Build Neural Network
 
 def build_neural_network(hidden_units=10):
@@ -216,4 +219,4 @@ evaluation["Survived"]=test_predict_result
 evaluation[:10]
 
 evaluation.to_csv("./out/evaluation_submission.csv",index=False)
-
+'''

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd share/example
-python hello.py
+cd share/
+python preprocess.py
