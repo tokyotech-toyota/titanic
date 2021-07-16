@@ -1,5 +1,9 @@
-# https://www.kaggle.com/linxinzhe/tensorflow-deep-learning-to-solve-titanic/notebook
-# import tensorflow as tf
+#!/usr/bin/env python3
+
+################################################################################
+################################################################################
+################################################################################
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,19 +14,40 @@ from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import Binarizer
 from collections import namedtuple
+# import tensorflow as tf
 
+################################################################################
+################################################################################
+################################################################################
 
-# load data
+# [INFO]
+#   Insert line below where you want to debug interactively:
+#   import ipdb; ipdb.set_trace()
+#
+# [URL]
+#   https://www.kaggle.com/linxinzhe/tensorflow-deep-learning-to-solve-titanic/notebook
 
-train_data = pd.read_csv(r"dat/train.csv")
-test_data = pd.read_csv(r"dat/test.csv")
+################################################################################
+################################################################################
+################################################################################
 
-# Feature Engineering
+# feature engineering
 def nan_padding(data, columns):
     for column in columns:
         imputer=SimpleImputer()
         data[column]=imputer.fit_transform(data[column].values.reshape(-1,1))
     return data
+
+################################################################################
+
+def drop_not_concerned(data, columns):
+    return data.drop(columns, axis=1)
+
+################################################################################
+
+# load data
+train_data = pd.read_csv(r"dat/train.csv")
+test_data = pd.read_csv(r"dat/test.csv")
 
 nan_columns = ["Age", "SibSp", "Parch"]
 
@@ -31,9 +56,6 @@ test_data = nan_padding(test_data, nan_columns)
 
 #save PassengerId for evaluation
 test_passenger_id=test_data["PassengerId"]
-
-def drop_not_concerned(data, columns):
-    return data.drop(columns, axis=1)
 
 not_concerned_columns = ["PassengerId","Name", "Ticket", "Fare", "Cabin", "Embarked"]
 train_data = drop_not_concerned(train_data, not_concerned_columns)

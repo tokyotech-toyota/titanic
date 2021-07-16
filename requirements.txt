@@ -9,6 +9,7 @@ pydotplus
 ipython
 keras
 matplotlib
+ipdb
 
 ########## specific version ##########
 
