@@ -30,6 +30,13 @@ from sklearn.metrics import accuracy_score
 # [URL]
 #   https://www.kaggle.com/linxinzhe/tensorflow-deep-learning-to-solve-titanic/notebook
 
+# [DATASET]
+#   https://qiita.com/suzumi/items/8ce18bc90c942663d1e6
+#
+#   * Pclass
+#   * Sex
+#   * Age
+
 ################################################################################
 ################################################################################
 ################################################################################
@@ -60,7 +67,9 @@ test_data = nan_padding(test_data, nan_columns)
 #save PassengerId for evaluation
 test_passenger_id=test_data["PassengerId"]
 
-not_concerned_columns = ["PassengerId","Name", "Ticket", "Fare", "Cabin", "Embarked"]
+#not_concerned_columns = ["PassengerId","Name", "Ticket", "Fare", "Cabin", "Embarked"]
+not_concerned_columns = ["PassengerId","Name", "Ticket", "Fare", "Cabin", "Embarked", "SibSp", "Parch"]
+
 train_data = drop_not_concerned(train_data, not_concerned_columns)
 test_data = drop_not_concerned(test_data, not_concerned_columns)
 
@@ -119,5 +128,5 @@ clf.fit(train_x, train_y)
 
 dummy_ans = clf.score(train_x, train_y)
 print(dummy_ans)
-import ipdb; ipdb.set_trace()
 
+import ipdb; ipdb.set_trace()
