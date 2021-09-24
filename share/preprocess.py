@@ -43,7 +43,7 @@ from sklearn.metrics import accuracy_score
 ################################################################################
 
 # feature engineering
-def nan_padding(data, columns):
+def pad_nan(data, columns):
     for column in columns:
         imputer=SimpleImputer()
         data[column]=imputer.fit_transform(data[column].values.reshape(-1,1))
@@ -55,13 +55,30 @@ def drop_not_concerned(data, columns):
     return data.drop(columns, axis=1)
 
 ################################################################################
+################################################################################
+################################################################################
+
+def preprocess():
+
+    # read data ================================================================
+    train_data = pd.read_csv(r"dat/train.csv")
+    test_data = pd.read_csv(r"dat/test.csv")
+
+    import ipdb; ipdb.set_trace()
+
+    # pad NaN ==================================================================
+    nan_columns = ["Age", "SibSp", "Parch"]
+    train_data = pad_nan(train_data, nan_columns)
+    test_data = pad_nan(train_data, nan_columns)
+    
+    return None
 
 # load data
-train_data = pd.read_csv(r"dat/train.csv")
-test_data = pd.read_csv(r"dat/test.csv")
+# train_data = pd.read_csv(r"dat/train.csv")
+# test_data = pd.read_csv(r"dat/test.csv")
 
-nan_columns = ["Age", "SibSp", "Parch"]
 
+"""
 train_data = nan_padding(train_data, nan_columns)
 test_data = nan_padding(test_data, nan_columns)
 
@@ -129,5 +146,7 @@ clf.fit(train_x, train_y)
 
 dummy_ans = clf.score(train_x, train_y)
 print(dummy_ans)
+"""
 
-#import ipdb; ipdb.set_trace()
+if __name__ == "__main__":
+    preprocess()
